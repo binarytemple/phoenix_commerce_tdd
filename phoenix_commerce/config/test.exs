@@ -12,13 +12,14 @@ config :logger, level: :warn
 # Configure your database
 config :phoenix_commerce, PhoenixCommerce.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "phoenix_commerce_test",
-  password: "phoenix_commerce_test",
-  database: "phoenix_commerce",
-  hostname: "localhost",
+  username: System.get_env("postgres_test_username"),
+  password: System.get_env("postgres_test_password"),
+  database: System.get_env("postgres_test_database"),
+  hostname: System.get_env("postgres_test_hostname"),
+  port:     System.get_env("postgres_test_port"), 
   pool: Ecto.Adapters.SQL.Sandbox
 
 config :hound,
   driver: "chrome_driver",
-  app_host: "http://localhost",
-  app_port: 4001
+  host: System.get_env("chrome_driver_host"),
+  port: System.get_env("chrome_driver_port")

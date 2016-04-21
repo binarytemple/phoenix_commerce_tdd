@@ -35,8 +35,9 @@ config :phoenix, :stacktrace_depth, 20
 # Configure your database
 config :phoenix_commerce, PhoenixCommerce.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
-  database: "phoenix_commerce_dev",
-  hostname: "localhost",
+  username: System.get_env("postgres_dev_username"),
+  password: System.get_env("postgres_dev_password"),
+  database: System.get_env("postgres_dev_database"),
+  hostname: System.get_env("postgres_dev_hostname"),
+  port:     System.get_env("postgres_dev_port"), 
   pool_size: 10

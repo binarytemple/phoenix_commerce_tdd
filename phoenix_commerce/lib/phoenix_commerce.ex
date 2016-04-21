@@ -10,7 +10,7 @@ defmodule PhoenixCommerce do
       # Start the endpoint when the application starts
       supervisor(PhoenixCommerce.Endpoint, []),
       # Start the Ecto repository
-      worker(PhoenixCommerce.Repo, []),
+      supervisor(PhoenixCommerce.Repo, []),
       # Here you could define other workers and supervisors as children
       # worker(PhoenixCommerce.Worker, [arg1, arg2, arg3]),
     ]

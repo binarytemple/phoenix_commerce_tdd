@@ -33,7 +33,7 @@ defmodule PhoenixCommerce.Endpoint do
   plug Plug.Session,
     store: :cookie,
     key: "_phoenix_commerce_key",
-    signing_salt: "XpC3SIwk"
+    signing_salt: "jB6+dqEL"
 
   plug PhoenixCommerce.Router
 end

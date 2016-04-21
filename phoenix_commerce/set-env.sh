@@ -11,7 +11,7 @@ export postgres_test_port="${POSTGRES_PORT}"
 export postgres_dev_username="postgres"
 export postgres_dev_password="postgres"
 export postgres_dev_database="phoenix_commerce_dev"
-export postgres_dev_hostname="localhost"
+export postgres_dev_hostname="${HOST}"
 export postgres_dev_port="${POSTGRES_PORT}"
 
 export chrome_driver_host="${HOST}"

@@ -1,6 +1,9 @@
 
-Example of an ACL which allows a low privileged user, in this case `binarytemple-phoenix-commerce` to read and write files to the AWS S3 bucket named `binarytemple-phoenix-commerce`. 
+# AWS S3 ACL Example
 
+This ACL allows a low privileged user, in this case `binarytemple-phoenix-commerce` to read and write files to the AWS S3 bucket named `binarytemple-phoenix-commerce`. 
+
+The policy itself was generated using the [AWS policygen online tool](http://awspolicygen.s3.amazonaws.com/policygen.html)
  
 ```
 {
@@ -36,3 +39,7 @@ Example of an ACL which allows a low privileged user, in this case `binarytemple
   ]
 }
 ```
+
+
+
+

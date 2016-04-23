@@ -40,6 +40,24 @@ The policy itself was generated using the [AWS policygen online tool](http://aws
 }
 ```
 
+ALSO! 
 
+I also needed to create the following policy and attach it to the use so that 'binarytemple-phoenix-commerce' would have the ability to list the buckets, otherwise you would be unable to view and list the files using a tool such as Transmit which needs the ability to list all buckets associated with a particular account. You need to specify this privileged in a seperate policy file, here is how I did it:
 
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:ListAllMyBuckets"
+            ],
+            "Resource": [
+                "arn:aws:s3:::*"
+            ]
+        }
+    ]
+}
+```
 

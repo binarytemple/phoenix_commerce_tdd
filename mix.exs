@@ -52,7 +52,7 @@ defmodule PhoenixCommerce.Mixfile do
       {:arc, "~> 0.2.2"},
       {:arc_ecto, "~> 0.3.1"},
       {:ex_aws, "~> 0.4.10"},
-      {:httpoison, "~> 0.7"},
+      {:httpoison, "~> 0.8.1"},
       {:stripity_stripe, "~> 1.2.0"}
     ]
   end

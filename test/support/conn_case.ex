@@ -1,9 +1,9 @@
-defmodule PhoenixCommerce.ChannelCase do
+defmodule PhoenixCommerce.ConnCase do
   @moduledoc """
   This module defines the test case to be used by
-  channel tests.
+  tests that require setting up a connection.
 
-  Such tests rely on `Phoenix.ChannelTest` and also
+  Such tests rely on `Phoenix.ConnTest` and also
   imports other functionality to make it easier
   to build and query models.
 
@@ -17,13 +17,15 @@ defmodule PhoenixCommerce.ChannelCase do
 
   using do
     quote do
-      # Import conveniences for testing with channels
-      use Phoenix.ChannelTest
+      # Import conveniences for testing with connections
+      use Phoenix.ConnTest
 
       alias PhoenixCommerce.Repo
-      import Ecto.Model
-      import Ecto.Query, only: [from: 2]
+      import Ecto
+      import Ecto.Changeset
+      import Ecto.Query, only: [from: 1, from: 2]
 
+      import PhoenixCommerce.Router.Helpers
 
       # The default endpoint for testing
       @endpoint PhoenixCommerce.Endpoint
@@ -35,6 +37,6 @@ defmodule PhoenixCommerce.ChannelCase do
       Ecto.Adapters.SQL.restart_test_transaction(PhoenixCommerce.Repo, [])
     end
 
-    :ok
+    {:ok, conn: Phoenix.ConnTest.conn()}
   end
 end

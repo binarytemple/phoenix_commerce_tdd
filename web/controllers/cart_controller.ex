@@ -35,7 +35,10 @@ defmodule PhoenixCommerce.CartController do
         query =
           from c in Cart,
           where: c.uuid == ^cart_uuid
-        Repo.one(query)
+     #import IEx
+     #IEx.pry
+     
+     Repo.one(query)
     end
 
     conn

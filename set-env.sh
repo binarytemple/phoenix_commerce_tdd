@@ -14,5 +14,11 @@ export postgres_dev_database="phoenix_commerce_dev"
 export postgres_dev_hostname="${HOST}"
 export postgres_dev_port="${POSTGRES_PORT}"
 
+export postgres_prod_username="postgres"
+export postgres_prod_password="postgres"
+export postgres_prod_database="phoenix_commerce_prod"
+export postgres_prod_hostname="${HOST}"
+export postgres_prod_port="${POSTGRES_PORT}"
+
 export chrome_driver_host="${HOST}"
 export chrome_driver_port=${CHROMEDRIVER_PORT}

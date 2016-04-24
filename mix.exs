@@ -53,7 +53,9 @@ defmodule PhoenixCommerce.Mixfile do
       {:arc_ecto, "~> 0.3.1"},
       {:ex_aws, "~> 0.4.10"},
       {:httpoison, "~> 0.8.1"},
-      {:stripity_stripe, "~> 1.2.0"}
+      {:stripity_stripe, "~> 1.2.0"},
+      {:exrm, "~> 0.14.3"}
+
     ]
   end
 

@@ -32,7 +32,7 @@ config :arc,
   bucket: "phoenix-commerce"
 
 config :ex_aws,
-  access_key_id: (System.get_env("PHOENIX_COMMERCE_AWS_ACCESS_KEY_ID") || raise "missing env var AWS_ACCESS_KEY_ID"),
-  secret_access_key: (System.get_env("PHOENIX_COMMERCE_AWS_SECRET_ACCESS_KEY") || raise "raise missing env var AWS_SECRET_ACCESS_KEY")
+  access_key_id: (System.get_env("PHOENIX_COMMERCE_AWS_ACCESS_KEY_ID") || raise "missing env var PHOENIX_COMMERCE_AWS_ACCESS_KEY_ID"),
+  secret_access_key: (System.get_env("PHOENIX_COMMERCE_AWS_SECRET_ACCESS_KEY") || raise "raise missing env var PHOENIX_COMMERCE_AWS_SECRET_ACCESS_KEY")
 
 config :stripity_stripe, secret_key: (System.get_env("PHOENIX_COMMERCE_STRIPE_SECRET_KEY") || raise "raise missing env var STRIPE_SECRET_KEY")

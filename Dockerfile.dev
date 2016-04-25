@@ -1,0 +1,40 @@
+FROM binarytemple/docker-phoenix:1.1.4_v4
+
+MAINTAINER admin@binarytemple.co.uk
+
+EXPOSE 8080
+
+ENV postgres_dev_username "postgres"
+
+ENV postgres_dev_password "postgres"
+
+ENV postgres_dev_database "phoenix_commerce_dev"
+
+ENV postgres_dev_hostname "postgres"
+
+ENV postgres_dev_port 5432
+
+ENV PHOENIX_COMMERCE_AWS_ACCESS_KEY_ID ""
+
+ENV PHOENIX_COMMERCE_AWS_SECRET_ACCESS_KEY ""
+
+ENV PHOENIX_COMMERCE_STRIPE_SECRET_KEY ""
+
+ENV MIX_ENV dev
+
+# https://github.com/nodejs/docker-node/blob/41b505ae714328f28a3457df9098d1e8db88a81a/4.4/wheezy/Dockerfile
+
+RUN apt-get -y update && apt-get -y install curl xz-utils inotify-tools python-pip
+
+RUN pip install boto
+
+COPY . . 
+
+RUN mix hex.info && mix deps.get && mix compile
+
+RUN npm install && node node_modules/brunch/bin/brunch build
+
+#ENTRYPOINT ["/usr/local/bin/iex"]
+#
+#CMD ["-S","mix", "phoenix.server"]
+CMD ["/bin/bash"]

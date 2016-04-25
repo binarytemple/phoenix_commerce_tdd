@@ -42,9 +42,3 @@ config :phoenix_commerce, PhoenixCommerce.Repo,
   hostname: (System.get_env("postgres_dev_hostname") || raise "can't load config postgres_dev_hostname"),
   port:     (System.get_env("postgres_dev_port")     || raise "can't load config postgres_dev_port"),
   pool_size: 10
-
-config :hound,
-  driver: "chrome_driver",
-  host: (System.get_env("chrome_driver_host") || raise "chrome_driver_host"),
-  port: (System.get_env("chrome_driver_port") || raise "chrome_driver_port")
- 

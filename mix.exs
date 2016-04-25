@@ -50,7 +50,7 @@ defmodule PhoenixCommerce.Mixfile do
       {:phoenix_ecto, "~> 2.0"},
       {:postgrex, "~> 0.11.0", [optional: true, hex: :postgrex]},
       {:phoenix_html, "~> 2.4"},
-      {:phoenix_live_reload, "~> 1.0", only: :dev},
+      {:phoenix_live_reload, "~> 1.0", only: [:dev,:test] },
       {:gettext, "~> 0.9"},
       {:cowboy, "~> 1.0"},
       {:hound, "~> 0.8.2", only: [:test]},

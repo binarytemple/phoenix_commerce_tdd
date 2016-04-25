@@ -62,11 +62,11 @@ config :logger, level: :info
 # Configure your database
 config :phoenix_commerce, PhoenixCommerce.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: (System.get_env("postgres_prod_username") || raise "can't load config postgres_test_username"),
-  password: (System.get_env("postgres_prod_password") || raise "can't load config postgres_test_password"),
-  database: (System.get_env("postgres_prod_database") || raise "can't load config postgres_test_database"),
-  hostname: (System.get_env("postgres_prod_hostname") || raise "can't load config postgres_test_hostname"),
-  port:     (System.get_env("postgres_prod_port")     || raise "can't load config postgres_test_port"),
+  username: (System.get_env("postgres_prod_username") || raise "can't load config postgres_prod_username"),
+  password: (System.get_env("postgres_prod_password") || raise "can't load config postgres_prod_password"),
+  database: (System.get_env("postgres_prod_database") || raise "can't load config postgres_prod_database"),
+  hostname: (System.get_env("postgres_prod_hostname") || raise "can't load config postgres_prod_hostname"),
+  port:     (System.get_env("postgres_prod_port")     || raise "can't load config postgres_prod_port"),
   pool_size: 20
 
 

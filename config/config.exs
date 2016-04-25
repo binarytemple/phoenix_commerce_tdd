@@ -29,7 +29,7 @@ config :phoenix, :generators,
   binary_id: false
 
 config :arc,
-  bucket: "phoenix-commerce"
+  bucket: "binarytemple-phoenix-commerce"
 
 config :ex_aws,
   access_key_id: (System.get_env("PHOENIX_COMMERCE_AWS_ACCESS_KEY_ID") || raise "missing env var PHOENIX_COMMERCE_AWS_ACCESS_KEY_ID"),

@@ -27,9 +27,14 @@ defmodule PhoenixCommerce.Mixfile do
     [:hound | applications(:dev)]
   end
 
+  defp applications(:dev) do
+     [:phoenix_live_reload| applications(:prod)]
+  end
+
   defp applications(_) do
      [:phoenix, :phoenix_html, :cowboy, :logger, :gettext,
-      :phoenix_ecto, :postgrex, :ex_aws, :httpoison, :stripity_stripe]
+      :phoenix_ecto, :postgrex, :arc, :arc_ecto,   
+      :ex_aws, :httpoison, :stripity_stripe]
   end
 
   # Specifies which paths to compile per environment.
@@ -48,13 +53,13 @@ defmodule PhoenixCommerce.Mixfile do
       {:phoenix_live_reload, "~> 1.0", only: :dev},
       {:gettext, "~> 0.9"},
       {:cowboy, "~> 1.0"},
-      {:hound, "~> 0.8.2", only: [:test,:dev]},
+      {:hound, "~> 0.8.2", only: [:test]},
       {:arc, "~> 0.2.2"},
       {:arc_ecto, "~> 0.3.1"},
       {:ex_aws, "~> 0.4.10"},
       {:httpoison, "~> 0.8.1"},
       {:stripity_stripe, "~> 1.2.0"},
-      {:exrm, "~> 0.14.3"}
+      {:exrm, "~> 1.0.3"}
 
     ]
   end
@@ -67,6 +72,8 @@ defmodule PhoenixCommerce.Mixfile do
   # See the documentation for `Mix` for more info on aliases.
   defp aliases do
     ["ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
-     "ecto.reset": ["ecto.drop", "ecto.setup"]]
+     "ecto.reset": ["ecto.drop", "ecto.setup"],
+     "commerce.release": ["clean","compile","phoenix.digest","release"] 
+     ]
   end
 end

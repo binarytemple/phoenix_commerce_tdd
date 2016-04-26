@@ -24,7 +24,7 @@ ENV MIX_ENV dev
 
 # https://github.com/nodejs/docker-node/blob/41b505ae714328f28a3457df9098d1e8db88a81a/4.4/wheezy/Dockerfile
 
-RUN apt-get -y update && apt-get -y install curl xz-utils inotify-tools python-pip
+RUN apt-get -y update && apt-get -y install curl xz-utils inotify-tools python-pip vim postgresql-client imagemagick
 
 RUN pip install boto
 

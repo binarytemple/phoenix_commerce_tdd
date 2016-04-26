@@ -1,0 +1,42 @@
+chromedriver:
+  image: robcherry/docker-chromedriver:latest
+  container_name: chromedriver 
+  ports:
+   - "4444:4444"
+  net: my-network
+  environment:
+    - CHROMEDRIVER_WHITELISTED_IPS=""
+
+postgres:
+  image: postgres
+  net: my-network
+  container_name: postgres
+  ports:
+   - "5432:5432"
+  environment:
+    - POSTGRES_PASSWORD=postgres
+
+phoenix_commerce_dev:
+  image: binarytemple/phoenix_commerce_dev:latest
+  net: my-network
+  container_name: phoenix_commerce_dev 
+  ports:
+   - "4000:4000"
+  stdin_open: true
+  tty: true
+  environment:
+    - PHOENIX_COMMERCE_AWS_ACCESS_KEY_ID 
+    - PHOENIX_COMMERCE_AWS_SECRET_ACCESS_KEY
+    - PHOENIX_COMMERCE_STRIPE_SECRET_KEY
+    - chrome_driver_host=chromedriver
+    - chrome_driver_port=4444
+    - postgres_dev_username=postgres
+    - postgres_dev_password=postgres
+    - postgres_dev_database=phoenix_commerce_dev
+    - postgres_dev_hostname=postgres
+    - postgres_dev_port=5432
+    - postgres_test_username=postgres
+    - postgres_test_password=postgres
+    - postgres_test_database=phoenix_commerce_test
+    - postgres_test_hostname=postgres
+    - postgres_test_port=5432

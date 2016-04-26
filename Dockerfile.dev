@@ -28,6 +28,8 @@ ENV MIX_ENV dev
 
 RUN apt-get -y update && apt-get -y install curl xz-utils inotify-tools python-pip vim postgresql-client imagemagick
 
+WORKDIR /phoenix-commerce
+
 COPY . . 
 
 RUN mix hex.info && mix deps.get && mix compile

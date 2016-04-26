@@ -53,7 +53,7 @@ defmodule PhoenixCommerce.Mixfile do
       {:phoenix_live_reload, "~> 1.0", only: [:dev,:test] },
       {:gettext, "~> 0.9"},
       {:cowboy, "~> 1.0"},
-      {:hound, "~> 0.8.2", only: [:test]},
+      {:hound, "~> 1.0.0", only: [:test]},
       {:arc, "~> 0.2.2"},
       {:arc_ecto, "~> 0.3.1"},
       {:ex_aws, "~> 0.4.10"},

@@ -29,10 +29,16 @@ config :phoenix, :generators,
   binary_id: false
 
 config :arc,
-  bucket: "binarytemple-phoenix-commerce"
+  bucket: "binarytemple-phoenix-commerce",
+  virtual_host: true
 
 config :ex_aws,
   access_key_id: (System.get_env("PHOENIX_COMMERCE_AWS_ACCESS_KEY_ID") || raise "missing env var PHOENIX_COMMERCE_AWS_ACCESS_KEY_ID"),
-  secret_access_key: (System.get_env("PHOENIX_COMMERCE_AWS_SECRET_ACCESS_KEY") || raise "raise missing env var PHOENIX_COMMERCE_AWS_SECRET_ACCESS_KEY")
+  secret_access_key: (System.get_env("PHOENIX_COMMERCE_AWS_SECRET_ACCESS_KEY") || raise "raise missing env var PHOENIX_COMMERCE_AWS_SECRET_ACCESS_KEY"),
+  s3: [
+    scheme: "https://",
+    host: "s3-eu-west-1.amazonaws.com",
+    region: "eu-west-1"
+  ]
 
 config :stripity_stripe, secret_key: (System.get_env("PHOENIX_COMMERCE_STRIPE_SECRET_KEY") || raise "raise missing env var STRIPE_SECRET_KEY")

@@ -8,9 +8,6 @@ defmodule PhoenixCommerce.Image do
   @versions [:original, :thumb]
   @acl :public_read
 
-  # To add a thumbnail version:
-  # @versions [:original, :thumb]
-
   # Whitelist file extensions:
   def validate({file, _}) do
     ~w(.jpg .jpeg .gif .png) |> Enum.member?(Path.extname(file.file_name))
@@ -18,13 +15,22 @@ defmodule PhoenixCommerce.Image do
 
   # Define a thumbnail transformation:
   def transform(:thumb, _) do
-    {:convert, "-strip -thumbnail 250x250^ -gravity center -extent 250x250 -format png"}
+    {:convert, "-strip -thumbnail 250x250^ -gravity center -extent 250x250"}
+  end
+
+  def s3_object_headers(version, {file, scope}) do
+    [content_type: Plug.MIME.path(file.file_name)] # for "image.png", would produce: "image/png"
   end
 
   # Override the persisted filenames:
-  # def filename(version, _) do
-  #   version
-  # end
+  def filename(:thumb, {file,_}) do
+     "#{Path.rootname(file.file_name)}_thumb" 
+  end
+
+  def filename(_, {file,_}) do
+     "#{Path.rootname(file.file_name)}"
+  end
+
 
   # Override the storage directory:
   # def storage_dir(version, {file, scope}) do

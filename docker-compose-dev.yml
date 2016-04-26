@@ -2,7 +2,9 @@ chromedriver:
   image: robcherry/docker-chromedriver:latest
   container_name: chromedriver 
   ports:
-   - "4444:4444"
+    - "4444:4444"
+  expose:
+    - "4444"
   net: my-network
   environment:
     - CHROMEDRIVER_WHITELISTED_IPS=""
@@ -12,7 +14,9 @@ postgres:
   net: my-network
   container_name: postgres
   ports:
-   - "5432:5432"
+    - "5432:5432"
+  expose:
+    - "5432"
   environment:
     - POSTGRES_PASSWORD=postgres
 
@@ -21,7 +25,9 @@ phoenix_commerce_dev:
   net: my-network
   container_name: phoenix_commerce_dev 
   ports:
-   - "4000:4000"
+    - "4000:4000"
+  expose:
+    - "4000" 
   stdin_open: true
   tty: true
   environment:

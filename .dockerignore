@@ -7,7 +7,6 @@ README.md
 _build
 help-list-routes.sh
 make-dev-release.sh
-verify.chrome.webdriver.docker.working.correctly.py
 docker-*.sh
 rel
 deps

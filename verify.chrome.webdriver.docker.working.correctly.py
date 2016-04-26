@@ -6,10 +6,9 @@ from selenium import webdriver
 import subprocess
 import re
 
-p = subprocess.Popen(['docker-machine', 'env', 'local'], stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+p = subprocess.Popen(['docker-machine', 'ip', 'local'], stdout=subprocess.PIPE,stderr=subprocess.PIPE)
 out, err = p.communicate()
-host=re.compile(r'DOCKER_HOST="tcp://([^:]*).*',re.MULTILINE).findall(out)[0]
-
+host=out.rstrip('\n')
 
 driver = webdriver.Remote(
     desired_capabilities=webdriver.DesiredCapabilities.FIREFOX,

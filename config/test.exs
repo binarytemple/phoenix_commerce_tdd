@@ -4,7 +4,7 @@ use Mix.Config
 # you can enable the server option below.
 config :phoenix_commerce, PhoenixCommerce.Endpoint,
   http: [port: 4001],
-  url: [host: (String.strip :binary.list_to_bin :os.cmd :binary.bin_to_list("/bin/hostname")) ],
+  url: [host: ((System.get_env("HOST")  ||  (String.strip :binary.list_to_bin :os.cmd :binary.bin_to_list("/bin/hostname"))) ],
   server: true
 
 # Print only warnings and errors during test

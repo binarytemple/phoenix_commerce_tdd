@@ -46,3 +46,4 @@ phoenix_commerce_dev:
     - postgres_test_database=phoenix_commerce_test
     - postgres_test_hostname=postgres
     - postgres_test_port=5432
+    - HOST=phoenix_commerce_dev  

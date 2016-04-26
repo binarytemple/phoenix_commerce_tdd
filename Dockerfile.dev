@@ -20,6 +20,8 @@ ENV PHOENIX_COMMERCE_AWS_SECRET_ACCESS_KEY ""
 
 ENV PHOENIX_COMMERCE_STRIPE_SECRET_KEY ""
 
+ENV HOST = "" 
+
 ENV MIX_ENV dev
 
 # https://github.com/nodejs/docker-node/blob/41b505ae714328f28a3457df9098d1e8db88a81a/4.4/wheezy/Dockerfile

@@ -1,4 +1,4 @@
-FROM binarytemple/docker-phoenix:1.1.4_v4
+FROM binarytemple/docker-phoenix:1.1.4_v5
 
 MAINTAINER admin@binarytemple.co.uk
 

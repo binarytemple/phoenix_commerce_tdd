@@ -60,7 +60,6 @@ defmodule PhoenixCommerce.Mixfile do
       {:httpoison, "~> 0.8.1"},
       {:stripity_stripe, "~> 1.2.0"},
       {:exrm, "~> 1.0.3"}
-
     ]
   end
 

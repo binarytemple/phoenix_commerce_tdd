@@ -1,0 +1,1 @@
+docker push binarytemple/phoenix_commerce_dev:latest

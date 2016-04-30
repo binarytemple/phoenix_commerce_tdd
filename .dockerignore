@@ -11,3 +11,10 @@ docker-*.sh
 rel
 deps
 node_modules
+build-release.sh
+codeship*
+docker-compose-dev.yml
+docker-machine-verify-chromedriver-working.py
+node_modules
+sanity.python.create.file.in.binarytemple-phoenix-commerce.py
+set-env.sh

@@ -1,6 +1,6 @@
-HOST=$(awk 'BEGIN{n=split(ENVIRON["DOCKER_HOST"],a,/[:->\/-]/); print a[n-1]} ' < /dev/null)
-POSTGRES_PORT=$(docker ps --format '{{.Image}} {{.Ports}}' | awk '/^postgres/{n=split($2,a,/[:->\/-]/); print a[n-1]}')
-CHROMEDRIVER_PORT=$(docker ps --format '{{.Image}} {{.Ports}}' | awk '/chromedriver/{n=split($2,a,/[:->\/-]/); print a[n-1]}')
+export HOST=$(awk 'BEGIN{n=split(ENVIRON["DOCKER_HOST"],a,/[:->\/-]/); print a[n-1]} ' < /dev/null)
+export POSTGRES_PORT=$(docker ps --format '{{.Image}} {{.Ports}}' | awk '/^postgres/{n=split($2,a,/[:->\/-]/); print a[n-1]}')
+export CHROMEDRIVER_PORT=$(docker ps --format '{{.Image}} {{.Ports}}' | awk '/chromedriver/{n=split($2,a,/[:->\/-]/); print a[n-1]}')
 
 export postgres_test_username="postgres"
 export postgres_test_password="postgres"

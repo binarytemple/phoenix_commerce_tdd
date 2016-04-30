@@ -41,4 +41,4 @@ config :ex_aws,
     region: "eu-west-1"
   ]
 
-config :stripity_stripe, secret_key: (System.get_env("PHOENIX_COMMERCE_STRIPE_SECRET_KEY") || raise "raise missing env var STRIPE_SECRET_KEY")
+config :stripity_stripe, secret_key: (System.get_env("PHOENIX_COMMERCE_STRIPE_SECRET_KEY") || raise "raise missing env var PHOENIX_COMMERCE_STRIPE_SECRET_KEY")
